@@ -67,8 +67,24 @@ export const readLoginById: RequestHandler = async (req: Request, res: Response)
 
 export const readLoginByName: RequestHandler = async (req: Request, res: Response) => {
     try {
-        console.log('search', req.params.readMoviesByTitleSearch);
+        console.log('search', req.params.readLoginByName);
         const login = await LoginDAO.readLoginByName('%' + req.params.search + '%');
+
+        res.status(200).json(
+            login
+        );
+    } catch (error) {
+        console.error(`[login.controller][readLoginByName][Error]`, error);
+        res.status(500).json({
+            message: 'There was an error when fetching login'
+        });
+    }
+};
+
+export const readLoginByEmail: RequestHandler = async (req: Request, res: Response) => {
+    try {
+        console.log('search', req.params.readLoginByEmail);
+        const login = await LoginDAO.readLoginByEmail('%' + req.params.search + '%');
 
         res.status(200).json(
             login

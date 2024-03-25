@@ -17,11 +17,17 @@ export const loginQueries = {
       FROM login
       WHERE RECORD_ID = ?
       `,
-      readLoginByName:`
+    readLoginByName:`
       SELECT
       *
       FROM login
       WHERE FIRST_NAME LIKE ? OR LAST_NAME LIKE ?
+      `,
+    readLoginByEmail:`
+      SELECT
+      *
+      FROM login
+      WHERE EMAIL LIKE ?
       `,
     createLogin:`
       INSERT INTO LOGIN(FIRST_NAME, LAST_NAME, EMAIL, PASSWORD, ROLE, RECORD_ID) VALUE(?,?,?,?,?,?)

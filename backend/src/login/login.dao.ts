@@ -22,6 +22,11 @@ export const readLoginByName = async (search: string) => {
     return execute<Login[]>(loginQueries.readLoginByName, [search, search]);
 };
 
+export const readLoginByEmail = async (search: string) => {
+    console.log('search param', search);
+    return execute<Login[]>(loginQueries.readLoginByEmail, [search]);
+};
+
 export const createLogin = async (login: Login) => {
     return execute<OkPacket>(loginQueries.createLogin,
         [login.FIRST_NAME, login.LAST_NAME, login.EMAIL, login.PASSWORD, login.ROLE, login.RECORD_ID ]);

@@ -19,6 +19,10 @@ router.
     get(LoginController.readLoginByName);
 
 router.
+    route('/login/email/:search').
+    get(LoginController.readLoginByEmail);
+
+router.
     route('/login/create').
     post(LoginController.createLogin);
 

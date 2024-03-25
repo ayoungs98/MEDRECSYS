@@ -19,7 +19,19 @@ router.
     put(RecordController.updateRecord);
 
 router.
-    route('/recird/delete/:ID').
+    route('/record/update/notes/').
+    put(RecordController.updateNotes);
+
+router.
+    route('/record/update/history/').
+    put(RecordController.updateHistory);
+
+router.
+    route('/record/update/test').
+    put(RecordController.updateTestResualts);
+
+router.
+    route('/record/delete/:ID').
     delete(RecordController.deleteRecord);
     
 export default router;

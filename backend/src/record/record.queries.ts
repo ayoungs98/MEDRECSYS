@@ -14,13 +14,29 @@ export const recordQueries = {
       `,
     createRecord:`
       INSERT INTO RECORDS(RECORD_ID, HEIGHT_FEET, HEIGHT_INCH, WEIGHT, SEX, AGE, DOB,
-        ADDRESS, CITY, STATE, ZIP, NOTES, HISTORY, TEST_RESUALTS) VALUE(?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+        ADDRESS, CITY, STATE, ZIP, NOTES, HISTORY, TEST_RESUALTS) 
+      VALUE(?,?,?,?,?,?,?,?,?,?,?,?,?,?)
       `,
     updateRecord:`
       UPDATE records
-      SET RECORD_ID = ?, HEIGHT_FEET = ?, HEIGHT_INCH = ?, WEIGHT = ?, SEX = ?, AGE = ?, DOB = ?, ADDRESS = ?,
+      SET HEIGHT_FEET = ?, HEIGHT_INCH = ?, WEIGHT = ?, SEX = ?, AGE = ?, DOB = ?, ADDRESS = ?,
       CITY = ?, STATE = ?, ZIP = ?, NOTES = ?, HISTORY = ?, TEST_RESUALTS = ?
-      WHERE ID = ?
+      WHERE RECORD_ID = ?
+    `,
+    updateNotes:`
+      UPDATE records
+      SET NOTES = ?
+      WHERE RECORD_ID = ?
+    `,
+    updateHistory:`
+      UPDATE records
+      SET HISTORY = ?
+      WHERE RECORD_ID = ?
+    `,
+    updateTestResualts:`
+      UPDATE records
+      SET TEST_RESUALTS = ?
+      WHERE RECORD_ID = ?
     `,
     deleteRecord:`
       DELETE FROM records
