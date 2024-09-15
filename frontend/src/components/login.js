@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import Validation from "./LoginValidation";
 
 function Login() {
@@ -9,6 +10,15 @@ function Login() {
     })
 
     const [errors, setErrors] = useState({})
+/*
+    checkLogin() {
+        axios
+            .get('')
+            .then((response) => {
+                const data = response.data;
+            });
+    }
+*/
 
     const handleInput =(event) => {
         setValues(prev => ({...prev, [event.target.name]: [event.target.value]}))

@@ -4,6 +4,7 @@ import CreateAccount from "./components/CreateAccount";
 import SysAdminHome from "./components/SysAdminHome";
 import StaffHome from "./components/StaffHome";
 import PatientHome from "./components/PatientHome";
+import CreateRecord from "./components/CreatePatientRecord";
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
                 <Route path='/systemAdmin' element={<SysAdminHome />}> </Route>
                 <Route path='/staffHome' element={<StaffHome />}> </Route>
                 <Route path='/patientHome' element={<PatientHome />}> </Route>
+                <Route path='/createRecord' element={<CreateRecord />}> </Route>
             </Routes>
         </BrowserRouter>
     )
