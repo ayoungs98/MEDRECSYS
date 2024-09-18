@@ -1,7 +1,7 @@
 import React, { useState} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Validation from "./CreateAccountValidation";
-import axios from "axios";
+import dataSource from "./dataSource";
 
 function CreateAccount() {
     
@@ -26,7 +26,7 @@ function CreateAccount() {
         setErrors(Validation(values));
         console.log(values);
         if(errors.first_name === "" && errors.last_name === "" && errors.email === "" && errors.password === "") {
-            axios.post("http://localhost:5000/login/create", values)
+            dataSource.post("/login/create", values)
             .then(res => {
                 navigate("/");
             })

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import dataSource from './dataSource.js'
 
 function CreatePatientRecord() {
 
@@ -35,36 +36,20 @@ function CreatePatientRecord() {
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor='recordId'><strong>Enter the patien's Record ID:</strong></label>
-                        <input 
-                            type="number" 
-                            name="recordId" 
-                            onChange={(e) => handleChange(e)}
-                        />
+                        <input type="number" name="recordId" onChange={(e) => handleChange(e)}/>
                 </div>
                 <div>
                     <label htmlFor='heightFeet'><strong>Enter the patient's Height (feet):</strong></label>
-                        <input 
-                        type="number" 
-                        name="heightFeet" 
-                        onChange={(e) => handleChange(e)}
-                        />
+                        <input type="number" name="heightFeet" onChange={(e) => handleChange(e)}/>
                     
                 </div>
                 <div>
                     <label htmlFor='heightInch'><strong>Enter the patient's Height (inchs):</strong></label>
-                        <input 
-                        type="number" 
-                        name="heightInch" 
-                        onChange={(e) => handleChange(e)}
-                        />
+                        <input type="number" name="heightInch" onChange={(e) => handleChange(e)}/>
                 </div>
                 <div>
                     <label htmlFor='weight'><strong>Enter the patient's weight:</strong></label>
-                        <input 
-                        type="number" 
-                        name="weight" 
-                        onChange={(e) => handleChange(e)}
-                        />
+                        <input type="number" name="weight" onChange={(e) => handleChange(e)}/>
                 </div>
                 <div>
                     <label htmlFor='sex'><strong>Select the patient's sex:</strong></label>
