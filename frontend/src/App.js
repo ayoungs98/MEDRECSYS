@@ -5,7 +5,8 @@ import SysAdminHome from "./components/SysAdminHome";
 import StaffHome from "./components/StaffHome";
 import PatientHome from "./components/PatientHome";
 import CreateRecord from "./components/CreatePatientRecord";
-import EditRecord from "./components/editRecord";
+import EditRecord from "./components/EditRecord";
+import PatientRecord from "./components/PatientRecord";
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
                 <Route path='/patientHome' element={<PatientHome />}> </Route>
                 <Route path='/createRecord' element={<CreateRecord />}> </Route>
                 <Route path='/editRecord' element={<EditRecord />}> </Route>
+                <Route path='/patientRecord' element={<PatientRecord /> }> </Route>
             </Routes>
         </BrowserRouter>
     )
