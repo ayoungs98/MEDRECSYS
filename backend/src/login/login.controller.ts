@@ -23,27 +23,6 @@ export const readLogin: RequestHandler = async (req: Request, res: Response) => 
     }
 };
 
-export const readLoginByRecord_Id: RequestHandler = async (req: Request, res: Response) => {
-    try {
-
-        let login;
-        let id = parseInt(req.params.id as string);
-
-        console.log('id', id);
-        if (!Number.isNaN(id)) {
-            login = await LoginDAO.readLoginByRecord_Id(id);
-        }
-        res.status(200).json(
-            login
-        );
-    } catch (error) {
-        console.error('[login.controller][readLogin][Error]', error);
-        res.status(500).json({
-            message: 'There was an error when fetching login'
-        });
-    }
-};
-
 export const readLoginById: RequestHandler = async (req: Request, res: Response) => {
     try {
 

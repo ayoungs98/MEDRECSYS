@@ -2,7 +2,7 @@ export const loginQueries = {
     readLogin:`
       SELECT
         ID AS ID, FIRST_NAME AS FIRST_NAME, LAST_NAME AS LAST_NAME, EMAIL AS EMAIL,
-        PASSWORD AS PASSWORD, ROLE AS ROLE, RECORD_ID AS RECORD_ID
+        PASSWORD AS PASSWORD, ROLE AS ROLE
         FROM login
       `,
     readLoginById:`
@@ -10,12 +10,6 @@ export const loginQueries = {
       *
       FROM login
       WHERE ID = ?
-      `,
-    readLoginByRecord_Id:`
-      SELECT
-      *
-      FROM login
-      WHERE RECORD_ID = ?
       `,
     readLoginByName:`
       SELECT
@@ -30,11 +24,11 @@ export const loginQueries = {
       WHERE EMAIL LIKE ?
       `,
     createLogin:`
-      INSERT INTO LOGIN(FIRST_NAME, LAST_NAME, EMAIL, PASSWORD, ROLE, RECORD_ID) VALUE(?,?,?,?,?,?)
+      INSERT INTO LOGIN(FIRST_NAME, LAST_NAME, EMAIL, PASSWORD, ROLE) VALUE(?,?,?,?,?)
       `,
     updateLogin:`
       UPDATE login
-      SET FIRST_NAME = ?, LAST_NAME = ?, EMAIL = ?, PASSWORD = ?, ROLE = ?, RECORD_ID = ?
+      SET FIRST_NAME = ?, LAST_NAME = ?, EMAIL = ?, PASSWORD = ?, ROLE = ?
       WHERE ID = ?
     `,
     deleteLogin:`

@@ -5,5 +5,4 @@ export interface Login {
     EMAIL: string;
     PASSWORD: string;
     ROLE: string;
-    RECORD_ID: number;
 }

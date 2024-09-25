@@ -3,7 +3,7 @@ import { Record } from './record.model'
 import * as RecordDAO from './record.dao';
 import { OkPacket } from 'mysql';
 
-export const readMovies: RequestHandler = async (req: Request, res: Response) => {
+export const readRecord: RequestHandler = async (req: Request, res: Response) => {
     try {
         let record;
         let ID = parseInt(req.query.ID as string);

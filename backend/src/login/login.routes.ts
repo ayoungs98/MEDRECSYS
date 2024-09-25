@@ -7,10 +7,6 @@ router.
     get(LoginController.readLogin);
 
 router.
-    route('/login/record_id/:id').
-    get(LoginController.readLoginByRecord_Id);
-
-router.
     route('/login/id/:id').
     get(LoginController.readLoginById);
 
