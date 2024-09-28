@@ -4,7 +4,7 @@ import * as RecordController from './record.controller'
 const router = Router();
 router.
     route('/record').
-    get(RecordController.readMovies);
+    get(RecordController.readRecord);
 
 router.
     route('/record/record_id/:ID').
