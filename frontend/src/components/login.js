@@ -1,24 +1,54 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useRef } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import dataSource from "./dataSource.js";
-import Validation from "./LoginValidation";
+import bcrypt from "bcryptjs-react";
 
 function Login() {
-    const [values, setValues] = useState({
-        email: "",
-        password: ""
-    })
 
-    const [errors, setErrors] = useState({})
+    const emailInputRef = useRef();
+    const passwordInputRef = useRef();
+    const navigate = useNavigate();
 
-
-    const handleInput =(event) => {
-        setValues(prev => ({...prev, [event.target.name]: [event.target.value]}))
-    }
-
-    const handleSubmit =(event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        setErrors(Validation(values));
+
+        const email = emailInputRef.current.value;
+        const pw = passwordInputRef.current.value;
+
+        // make call to DB
+        let response;
+        response = await dataSource.get('/login/email/' + email );
+
+        // check to make sure email is on the DB
+        if(response.data.length === 0) {
+            alert("Username or Password does not match!")
+        } else {
+            const hashedPW = response.data[0].PASSWORD;
+             // checks to make sure the password matches
+            const isMatch = await bcrypt.compare(pw, hashedPW);
+            if(!isMatch) {
+                alert("Username or Password does not match!")
+            } else {
+                switch (response.data[0].ROLE) {
+                    case "A":
+                    case "a":
+                        navigate("/systemAdmin");
+                        break;
+                    case "E":
+                    case "e":
+                        navigate("/staffHome");
+                        break;
+                    case "P":
+                    case "p":
+                        navigate("/patientHome");
+                        break;
+                    default:
+                        break;  
+                };
+            };
+
+        }
+      
     }
 
     return (
@@ -29,14 +59,12 @@ function Login() {
                     <div className="mb-3">
                         <label htmlFor="email"> <strong>Email </strong></label>
                         <input type="email" placeholder="Enter Eamil" name="email"
-                        onChange={handleInput} className="form-control rounded-0"></input>
-                        {errors.email && <span className="text-danger"> {errors.email}</span>}
+                        ref={emailInputRef} className="form-control rounded-0" required></input>
                     </div>
                     <div className="mb-3">
                         <label htmlFor="password"><strong>Password </strong></label>
                         <input type="password" placeholder="Enter Password" name="password"
-                        onChange={handleInput} className="form-control rounded-0"></input>
-                        {errors.password && <span className="text-danger"> {errors.password}</span>}
+                        ref={passwordInputRef} className="form-control rounded-0" required></input>
                     </div>
                     <button type="submit" className="btn btn-success w-100 rounded-0">Login</button>
                     <p></p>
@@ -48,3 +76,7 @@ function Login() {
 }
 
 export default Login
+
+/*
+
+*/

@@ -1,35 +1,76 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Row, Col } from "react-bootstrap";
 import dataSource from './dataSource.js'
 
 function PatientRecord(props) {
 
+    const [height_Feet, setHeight_feet] = useState('');
+    const [height_inch, setHeight_inch] = useState('');
+    const [weight, setWeight] = useState('');
+    const [sex, setSex] = useState('');
+    const [age, setAge] = useState('');
+    const [dob, setDob] = useState('');
+    const [address, setAddress] = useState('');
+    const [city, setCity] = useState('');
+    const [state, setState] = useState('');
+    const [zip, setZip] = useState('');
+    const [notes, setNotes] = useState('');
+    const [histoty, setHistory] = useState('');
+    const [testResults, setTestResults] = useState('');
+
+
+    let response;
     let patient = {
         first_name: 'John',
         last_name: 'Smith',
         recordId: '1',
-        heightFeet: '5',
-        heightInch: '5',
-        weight: '155',
-        sex: 'male',
-        age: '24',
-        dob: '01/01/2000',
-        address: '12345 street',
-        city: 'temp town',
-        state: 'TT',
-        zip: '54321',
-        notes: 'some notes',
-        history: 'some history',
-        testResults: 'none',
+        heightFeet: height_Feet,
+        heightInch: height_inch,
+        weight: weight,
+        sex: sex,
+        age: age,
+        dob: dob,
+        address: address,
+        city: city,
+        state: state,
+        zip: zip,
+        notes: notes,
+        history: histoty,
+        testResults: testResults,
     }
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
+    useEffect(() =>{
+        getInfo();
+      });
+
+    const getInfo = async (props) => {
+        // make call to DB
+        let res;
+        res = await dataSource.get('/record/record_id/' + 3 );
+        response = res.data[0];
+        console.log(response);
+        setHeight_feet(response.HEIGHT_FEET);
+        setHeight_inch(response.HEIGHT_INCH);
+        setWeight(response.WEIGHT);
+        setSex(response.SEX);
+        setAge(response.AGE);
+        setDob(response.DOB);
+        setAddress(response.ADDRESS);
+        setCity(response.CITY);
+        setState(response.STATE);
+        setZip(response.ZIP);
+        setNotes(response.NOTES);
+        setHistory(response.HISTORY);
+        setTestResults(response.TEST_RESULTS);        
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
         console.log(patient)
-      }
+    };
 
     return (
-         <div className="d-flex justify-content-center align-items-center bg-primary">
+        <div className="d-flex justify-content-center align-items-center bg-primary">
         <form onSubmit={handleSubmit}>    
             <div className="bg-white p-3 rounded" style={{width: "600px"}}>
             <h1>Patient Record</h1><br/>
@@ -102,3 +143,46 @@ function PatientRecord(props) {
 }
 
 export default PatientRecord
+
+/*
+let patient = {
+        first_name: 'John',
+        last_name: 'Smith',
+        recordId: '1',
+        heightFeet: '5',
+        heightInch: '5',
+        weight: '155',
+        sex: 'male',
+        age: '24',
+        dob: '01/01/2000',
+        address: '12345 street',
+        city: 'temp town',
+        state: 'TT',
+        zip: '54321',
+        notes: 'some notes',
+        history: 'some history',
+        testResults: 'none',
+    }
+
+    
+    let patient = {
+        first_name: 'John',
+        last_name: 'Smith',
+        recordId: '3',
+        heightFeet: response.data[0].HEIGHT_FEET,
+        heightInch: response.data[0].HEIGHT_INCH,
+        weight: response.data[0].WEIGHT,
+        sex: response.data[0].SEX,
+        age: response.data[0].AGE,
+        dob: response.data[0].DOB,
+        address: response.data[0].ADDRESS,
+        city: response.data[0].CITY,
+        state: response.data[0].STATE,
+        zip: response.data[0].ZIP,
+        notes: response.data[0].NOTES,
+        history: response.data[0].HISTORY,
+        testResults: response.data[0].TEST_RESULTS,
+        
+    }
+
+*/
