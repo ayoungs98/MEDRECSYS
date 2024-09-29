@@ -13,5 +13,5 @@ export interface Record {
     ZIP: number,
     NOTES: string,
     HISTORY: string,
-    TEST_RESUALTS: string
+    TEST_RESULTS: string
 }
