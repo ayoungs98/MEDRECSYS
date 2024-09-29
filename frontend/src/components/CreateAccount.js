@@ -7,6 +7,7 @@ function CreateAccount() {
 
     const passwordInputRef = useRef();
     const password2InputRef = useRef();
+    let response;
 
     const navigate = useNavigate();
 
@@ -30,10 +31,11 @@ function CreateAccount() {
             ROLE: "P",
             };
 
-            let response;
-            response = await dataSource.get('/login/email/' + user.EMAIL );
+            let res;
+            res = await dataSource.get('/login/email/' + user.EMAIL );
+            response = res.data[0];
 
-            if(response.data.length === 0) {
+            if(response.length === 0) {
                 response = await dataSource.post('/login/create', user );
                 console.log(response.status);
                 navigate("/login");

@@ -1,39 +1,70 @@
 import React, { useState } from 'react';
 import { Row, Col } from "react-bootstrap";
+import { useLocation, useNavigate } from "react-router-dom";
 import dataSource from './dataSource.js'
 
-function CreatePatientRecord(props) {
+function CreatePatientRecord() {
 
-    const [inputs, setInputs] = useState({
-        heightFeet: '',
-        heightInch: '',
-        weight: '',
-        sex: 'male',
-        age: '',
-        dob: '',
-        address: '',
-        city: '',
-        state: '',
-        zip: '',
-        notes: '',
-        history: '',
-        testResults: '',
-    });
+    const { state } = useLocation();
+    const navigate = useNavigate();
+    
+    const [height_Feet, setHeight_feet] = useState('');
+    const [height_inch, setHeight_inch] = useState('');
+    const [weight, setWeight] = useState('');
+    const [sex, setSex] = useState('male');
+    const [age, setAge] = useState('');
+    const [dob, setDob] = useState('');
+    const [address, setAddress] = useState('');
+    const [city, setCity] = useState('');
+    const [statee, setState] = useState('');
+    const [zip, setZip] = useState('');
+    const [notes, setNotes] = useState('');
+    const [histoty, setHistory] = useState('');
+    const [testResults, setTestResults] = useState('');
 
-    let names = {
-        first_name: 'Bob',
-        last_name: 'Smith',
-        recordId: '1',
+    let user = {
+        RECORD_ID: state.ID,
+        HEIGHT_FEET: height_Feet,
+        HEIGHT_INCH: height_inch,
+        WEIGHT: weight,
+        SEX: sex,
+        AGE: age,
+        DOB: dob,
+        ADDRESS: address,
+        CITY: city,
+        STATE: statee,
+        ZIP: zip,
+        NOTES: notes,
+        HISTORY: histoty,
+        TEST_RESULTS: testResults,
     }
 
-    const handleChange = (e) => {
-        setInputs({...inputs, [e.target.name]:[e.target.value]})
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        let res;
+        res = await dataSource.post('/record/create', user);
+        navigate("/patientHome", { state : state });
       }
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(inputs)
-      }
+    const handleCancel = () => {
+        switch (state.ROLE) {
+            case "P":
+            case 'p':
+                console.log("Patient")
+                navigate("/patientHome", { state : state });
+                break;
+            case "A":
+            case "a":
+                console.log("Admin");
+                break;
+            case "E":
+            case "e":
+                console.log("Staff");
+                break;
+            default:
+                break;
+        }
+    }
 
     return (
         <div className="d-flex justify-content-center align-items-center bg-primary">
@@ -43,39 +74,39 @@ function CreatePatientRecord(props) {
                 <Row>
                     <Col>
                         <label htmlFor="first_name">First Name</label>
-                        <p>{names.first_name}</p>
+                        <p>{state.FIRST_NAME}</p>
                     </Col>
                     <Col>
                         <label htmlFor="last_name">Last Name</label>
-                        <p>{names.last_name}</p>
+                        <p>{state.LAST_NAME}</p>
                     </Col>
                     <Col>
                         <label htmlFor="recordId">Record ID</label>
-                        <p>{names.recordId}</p>
+                        <p>{user.RECORDID}</p>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
                         <label htmlFor="heightFeet">Height(Feet)</label>
-                        <input type="text" className="form-control" id="heightFeet" name="heightFeet"  onChange={handleChange} ></input>
+                        <input type="text" className="form-control" id="heightFeet" name="heightFeet"  onChange={(e) => setHeight_feet(e.target.value)} ></input>
                     </Col>
                     <Col>
                         <label htmlFor="heightInch">Height(inchs)</label>
-                        <input type="text" className="form-control" id="heightInch" name="heightInch"  onChange={handleChange} ></input>
+                        <input type="text" className="form-control" id="heightInch" name="heightInch"  onChange={(e) => setHeight_inch(e.target.value)} ></input>
                     </Col>
                     <Col>
                         <label htmlFor="weight">Weight</label>
-                        <input type="text" className="form-control" id="weight" name="weight" onChange={handleChange} ></input>
+                        <input type="text" className="form-control" id="weight" name="weight" onChange={(e) => setWeight(e.target.value)} ></input>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
                         <label htmlFor="dob">Date of birth</label>
-                        <input type="text" className="form-control" id="dob" name="dob"  onChange={handleChange} ></input>
+                        <input type="text" className="form-control" id="dob" name="dob"  onChange={(e) => setDob(e.target.value)} ></input>
                     </Col>
                     <Col>
                         <label htmlFor='sex'>Select the patient's sex:</label><br/>
-                        <select name='sex' id='sex' onChange={(e) => handleChange(e)}>
+                        <select name='sex' id='sex' onChange={(e) => setSex(e.target.value)}>
                             <option value='male'>Male</option>
                             <option value='female'>Female</option>
                             <option value='other'>Other</option>
@@ -83,38 +114,38 @@ function CreatePatientRecord(props) {
                     </Col>
                     <Col>
                         <label htmlFor="age">age</label>
-                        <input type="text" className="form-control" id="age" name="age"  onChange={handleChange} ></input>
+                        <input type="text" className="form-control" id="age" name="age"  onChange={(e) => setAge(e.target.value)} ></input>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
                         <label htmlFor="address">address</label>
-                        <input type="text" className="form-control" id="address" name="address"  onChange={handleChange} ></input>
+                        <input type="text" className="form-control" id="address" name="address"  onChange={(e) => setAddress(e.target.value)} ></input>
                     </Col>
                     <Col>
                         <label htmlFor="city">city</label>
-                        <input type="text" className="form-control" id="city" name="city"  onChange={handleChange} ></input>
+                        <input type="text" className="form-control" id="city" name="city"  onChange={(e) => setCity(e.target.value)} ></input>
                     </Col>
                     <Col>
                         <label htmlFor="state">state</label>
-                        <input type="text" className="form-control" id="state" name="state"  onChange={handleChange} ></input>
+                        <input type="text" className="form-control" id="state" name="state"  onChange={(e) => setState(e.target.value)} ></input>
                     </Col>
                 </Row>
                 <label htmlFor="zip">Zip</label>
-                <input type="text" className="form-control" id="zip" name="zip" style={{width: "100px"}}  onChange={handleChange} ></input><br/>
+                <input type="text" className="form-control" id="zip" name="zip" style={{width: "100px"}}  onChange={(e) => setZip(e.target.value)} ></input><br/>
 
                 <label htmlFor="notes">Notes</label>
-                <textarea className="form-control" id="notes" name='notes'  rows='5' cols={1} onChange={handleChange}></textarea><br/>
+                <textarea className="form-control" id="notes" name='notes'  rows='5' cols={1} onChange={(e) => setNotes(e.target.value)}></textarea><br/>
 
                 <label htmlFor="history">History</label>
-                <textarea className="form-control" id="history" name="history"  rows='5' cols={1} onChange={handleChange} ></textarea><br/>
+                <textarea className="form-control" id="history" name="history"  rows='5' cols={1} onChange={(e) => setHistory(e.target.value)} ></textarea><br/>
                 
                 <label htmlFor="testResults">Test Results</label>
-                <textarea className="form-control" id="testResults" name="testResults"  rows='5' cols={1} onChange={handleChange} ></textarea><br/>
+                <textarea className="form-control" id="testResults" name="testResults"  rows='5' cols={1} onChange={(e) => setTestResults(e.target.value)} ></textarea><br/>
             </div>
             <div className="d-grid gap-2 d-md-flex">
             <button type='submit' className='btn btn-success w-25 rounded-0'>Submit</button>
-            <button type='button' className="btn btn-danger w-25 rounded-0 ">Cancel</button>
+            <button type='button' onClick={handleCancel} className="btn btn-danger w-25 rounded-0 ">Cancel</button>
             </div>
         </form>
     </div>

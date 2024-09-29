@@ -8,39 +8,48 @@ function Login() {
     const emailInputRef = useRef();
     const passwordInputRef = useRef();
     const navigate = useNavigate();
+    let response;
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
         const email = emailInputRef.current.value;
         const pw = passwordInputRef.current.value;
 
         // make call to DB
-        let response;
-        response = await dataSource.get('/login/email/' + email );
-
+        let res;
+        res = await dataSource.get('/login/email/' + email );
+        response = res.data[0];
+        
         // check to make sure email is on the DB
-        if(response.data.length === 0) {
+        if(response.length === 0) {
             alert("Username or Password does not match!")
         } else {
-            const hashedPW = response.data[0].PASSWORD;
+            const hashedPW = response.PASSWORD;
              // checks to make sure the password matches
             const isMatch = await bcrypt.compare(pw, hashedPW);
             if(!isMatch) {
                 alert("Username or Password does not match!")
             } else {
-                switch (response.data[0].ROLE) {
+                let user = {
+                    FIRST_NAME: response.FIRST_NAME,
+                    LAST_NAME: response.LAST_NAME,
+                    EMAIL: response.EMAIL,
+                    ID: response.ID,
+                    ROLE: response.ROLE,
+                }
+                switch (response.ROLE) {
                     case "A":
                     case "a":
-                        navigate("/systemAdmin");
+                        navigate("/systemAdmin", { state : user });
                         break;
                     case "E":
                     case "e":
-                        navigate("/staffHome");
+                        navigate("/staffHome", { state : user });
                         break;
                     case "P":
                     case "p":
-                        navigate("/patientHome");
+                        navigate("/patientHome", { state : user });
                         break;
                     default:
                         break;  

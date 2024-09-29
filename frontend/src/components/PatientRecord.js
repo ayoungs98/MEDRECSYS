@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from "react-router-dom";
 import { Row, Col } from "react-bootstrap";
 import dataSource from './dataSource.js'
 
-function PatientRecord(props) {
+function PatientRecord() {
+
+    const { state } = useLocation();
 
     const [height_Feet, setHeight_feet] = useState('');
     const [height_inch, setHeight_inch] = useState('');
@@ -12,7 +15,7 @@ function PatientRecord(props) {
     const [dob, setDob] = useState('');
     const [address, setAddress] = useState('');
     const [city, setCity] = useState('');
-    const [state, setState] = useState('');
+    const [statee, setState] = useState('');
     const [zip, setZip] = useState('');
     const [notes, setNotes] = useState('');
     const [histoty, setHistory] = useState('');
@@ -21,9 +24,9 @@ function PatientRecord(props) {
 
     let response;
     let patient = {
-        first_name: 'John',
-        last_name: 'Smith',
-        recordId: '1',
+        first_name: state.FIRST_NAME,
+        last_name: state.LAST_NAME,
+        recordId: state.ID,
         heightFeet: height_Feet,
         heightInch: height_inch,
         weight: weight,
@@ -32,7 +35,7 @@ function PatientRecord(props) {
         dob: dob,
         address: address,
         city: city,
-        state: state,
+        state: statee,
         zip: zip,
         notes: notes,
         history: histoty,
@@ -46,9 +49,9 @@ function PatientRecord(props) {
     const getInfo = async (props) => {
         // make call to DB
         let res;
-        res = await dataSource.get('/record/record_id/' + 3 );
+        res = await dataSource.get('/record/record_id/' + state.ID );
         response = res.data[0];
-        console.log(response);
+
         setHeight_feet(response.HEIGHT_FEET);
         setHeight_inch(response.HEIGHT_INCH);
         setWeight(response.WEIGHT);
@@ -145,44 +148,4 @@ function PatientRecord(props) {
 export default PatientRecord
 
 /*
-let patient = {
-        first_name: 'John',
-        last_name: 'Smith',
-        recordId: '1',
-        heightFeet: '5',
-        heightInch: '5',
-        weight: '155',
-        sex: 'male',
-        age: '24',
-        dob: '01/01/2000',
-        address: '12345 street',
-        city: 'temp town',
-        state: 'TT',
-        zip: '54321',
-        notes: 'some notes',
-        history: 'some history',
-        testResults: 'none',
-    }
-
-    
-    let patient = {
-        first_name: 'John',
-        last_name: 'Smith',
-        recordId: '3',
-        heightFeet: response.data[0].HEIGHT_FEET,
-        heightInch: response.data[0].HEIGHT_INCH,
-        weight: response.data[0].WEIGHT,
-        sex: response.data[0].SEX,
-        age: response.data[0].AGE,
-        dob: response.data[0].DOB,
-        address: response.data[0].ADDRESS,
-        city: response.data[0].CITY,
-        state: response.data[0].STATE,
-        zip: response.data[0].ZIP,
-        notes: response.data[0].NOTES,
-        history: response.data[0].HISTORY,
-        testResults: response.data[0].TEST_RESULTS,
-        
-    }
-
 */
