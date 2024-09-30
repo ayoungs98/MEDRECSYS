@@ -108,7 +108,7 @@ function PatientLookup () {
         let res;
         res = await dataSource.put('/record/update/', record );
         console.log(res.status)
-       navigate("/patientRecord", { state : user });
+       navigate("/staffHome", { state : user });
         
     }
 
