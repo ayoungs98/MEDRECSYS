@@ -68,7 +68,6 @@ export const updateRecord: RequestHandler = async (req: Request, res: Response) 
         const OkPacket: OkPacket = await RecordDAO.updateRecord(req.body);
 
         console.log('req.body', req.body);
-
         console.log('record', OkPacket);
           
         res.status(200).json(

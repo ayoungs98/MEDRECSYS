@@ -26,6 +26,10 @@ router.
     route('/login/update').
     put(LoginController.updateLogin);
 
+    router.
+    route('/login/update/password').
+    put(LoginController.updatePassword);
+
 router.
     route('/login/delete/:id').
     delete(LoginController.deleteLogin);

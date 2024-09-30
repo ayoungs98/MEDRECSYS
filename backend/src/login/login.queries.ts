@@ -31,6 +31,11 @@ export const loginQueries = {
       SET FIRST_NAME = ?, LAST_NAME = ?, EMAIL = ?, PASSWORD = ?, ROLE = ?
       WHERE ID = ?
     `,
+    updatePassword:`
+      UPDATE login
+      SET PASSWORD = ?
+      WHERE ID = ?
+    `,
     deleteLogin:`
       DELETE FROM login
       WHERE ID = ?

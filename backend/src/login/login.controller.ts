@@ -99,7 +99,6 @@ export const updateLogin: RequestHandler = async (req: Request, res: Response) =
         const OkPacket: OkPacket = await LoginDAO.updateLogin(req.body);
 
         console.log('req.body', req.body);
-
         console.log('login', OkPacket);
           
         res.status(200).json(
@@ -109,6 +108,24 @@ export const updateLogin: RequestHandler = async (req: Request, res: Response) =
         console.error('[login.controller][updateLogin][Error]', error);
         res.status(500).json({
             message: 'There was an error when writing login'
+        });
+    }
+};
+
+export const updatePassword: RequestHandler = async (req: Request, res: Response) => {
+    try {
+        const OkPacket: OkPacket = await LoginDAO.updatePassword(req.body);
+
+        console.log('req.body', req.body);
+        console.log('login', OkPacket);
+          
+        res.status(200).json(
+            OkPacket
+        );
+    } catch (error) {
+        console.error('[login.controller][updatePassword][Error]', error);
+        res.status(500).json({
+            message: 'There was an error when updating Password'
         });
     }
 };

@@ -32,6 +32,11 @@ export const updateLogin = async (login: Login) => {
         [login.FIRST_NAME, login.LAST_NAME, login.EMAIL, login.PASSWORD, login.ROLE, login.ID ]);
 };
 
+export const updatePassword = async (login: Login) => {
+    return execute<OkPacket>(loginQueries.updatePassword, 
+        [login.PASSWORD, login.ID ]);
+};
+
 export const deleteLogin = async (id: number) => {
     return execute<OkPacket>(loginQueries.deleteLogin, [id]);
 };
