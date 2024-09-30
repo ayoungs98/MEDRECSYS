@@ -78,7 +78,7 @@ function CreateAccount() {
                     </div>
                     <button type="submit" className="btn btn-success w-100 rounded-0">Create Account</button>
                     <p></p>
-                    <Link to="/" className="btn btn-default border w-100 rounded-0 text-decoration-none">Login</Link>
+                    <Link to="/" className="btn btn-secondary border w-100 rounded-0 text-decoration-none">Login</Link>
                 </form>
             </div>
         </div>

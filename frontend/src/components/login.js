@@ -77,7 +77,7 @@ function Login() {
                     </div>
                     <button type="submit" className="btn btn-success w-100 rounded-0">Login</button>
                     <p></p>
-                    <Link to="/createAccount" className="btn btn-default border w-100 rounded-0 text-decoration-none">Create Account</Link>
+                    <Link to="/createAccount" className="btn btn-secondary border w-100 rounded-0 text-decoration-none">Create Account</Link>
                 </form>
             </div>
         </div>

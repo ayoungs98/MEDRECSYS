@@ -6,6 +6,15 @@ import dataSource from './dataSource.js'
 function PatientRecord() {
 
     const { state } = useLocation();
+    const navigate = useNavigate();
+
+    let user = {
+        FIRST_NAME: state.FIRST_NAME,
+        LAST_NAME: state.LAST_NAME,
+        EMAIL: state.EMAIL,
+        ID: state.ID,
+        ROLE: state.ROLE,
+    }
 
     const [height_Feet, setHeight_feet] = useState('');
     const [height_inch, setHeight_inch] = useState('');
@@ -24,9 +33,11 @@ function PatientRecord() {
 
     let response;
     let patient = {
-        first_name: state.FIRST_NAME,
-        last_name: state.LAST_NAME,
-        recordId: state.ID,
+        FIRST_NAME: state.FIRST_NAME,
+        LAST_NAME: state.LAST_NAME,
+        EMAIL: state.EMAIL,
+        ID: state.ID,
+        ROLE: state.ROLE,
         heightFeet: height_Feet,
         heightInch: height_inch,
         weight: weight,
@@ -46,7 +57,7 @@ function PatientRecord() {
         getInfo();
       });
 
-    const getInfo = async (props) => {
+    const getInfo = async () => {
         // make call to DB
         let res;
         res = await dataSource.get('/record/record_id/' + state.ID );
@@ -67,28 +78,34 @@ function PatientRecord() {
         setTestResults(response.TEST_RESULTS);        
     };
 
-    const handleSubmit = (e) => {
+    const handleHome = (e) => {
         e.preventDefault();
-        console.log(patient)
+        navigate('/patientHome', { state : user })
     };
+
+    const handleEdit = (e) => {
+        e.preventDefault();
+        navigate ('/editRecord', { state : patient })
+    };
+
 
     return (
         <div className="d-flex justify-content-center align-items-center bg-primary">
-        <form onSubmit={handleSubmit}>    
+        <form>    
             <div className="bg-white p-3 rounded" style={{width: "600px"}}>
             <h1>Patient Record</h1><br/>
                 <Row>
                     <Col>
                         <label htmlFor="first_name">First Name</label>
-                        <p >{patient.first_name}</p>
+                        <p >{patient.FIRST_NAME}</p>
                     </Col>
                     <Col>
                         <label htmlFor="last_name">Last Name</label>
-                        <p >{patient.last_name}</p>
+                        <p >{patient.LAST_NAME}</p>
                     </Col>
                     <Col>
                         <label htmlFor="recordId">Record ID</label>
-                        <p >{patient.recordId}</p>
+                        <p >{patient.ID}</p>
                     </Col>
                 </Row>
                 <Row>
@@ -137,8 +154,8 @@ function PatientRecord() {
                 <textarea className="form-control" id="testResults" name="testResults"  rows='4' cols={1} defaultValue={patient.testResults} ></textarea><br/>
             </div>
             <div className="d-grid gap-2 d-md-flex">
-            <button type='button' className='btn btn-success w-25 rounded-0'>Home</button>
-            <button type='submit' className='btn btn-danger w-25 rounded-0'>Edit</button>
+            <button type='button' onClick={handleHome} className='btn btn-success w-25 rounded-0'>Home</button>
+            <button type='button' onClick={handleEdit} className='btn btn-danger w-25 rounded-0'>Edit</button>
             </div>
         </form>
     </div>

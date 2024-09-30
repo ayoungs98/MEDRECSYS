@@ -3,10 +3,12 @@ import { Row, Col } from "react-bootstrap";
 import { useNavigate, useLocation } from "react-router-dom";
 import dataSource from "./dataSource";
 
-const EditRecords = () => {
+function PatientLookup () {
 
     const { state } = useLocation();
     const navigate = useNavigate();
+    let res;
+    let response;
 
     let user = {
         FIRST_NAME: state.FIRST_NAME,
@@ -16,22 +18,35 @@ const EditRecords = () => {
         ROLE: state.ROLE,
     };    
 
-    const [height_Feet, setHeight_feet] = useState(state.heightFeet);
-    const [height_inch, setHeight_inch] = useState(state.heightInch);
-    const [weight, setWeight] = useState(state.weight);
-    const [sex, setSex] = useState(state.sex);
-    const [age, setAge] = useState(state.age);
-    const [dob, setDob] = useState(state.dob);
-    const [address, setAddress] = useState(state.address);
-    const [city, setCity] = useState(state.city);
-    const [statee, setState] = useState(state.state);
-    const [zip, setZip] = useState(state.zip);
-    const [notes, setNotes] = useState(state.notes);
-    const [histoty, setHistory] = useState(state.history);
-    const [testResults, setTestResults] = useState(state.testResults);
+    const [first_name, setFirst_name] = useState('');
+    const [last_name, setLast_name] = useState('');
+    const [email, setEmail] = useState('');
+    const [id, setId] = useState('');
+    const [role, setRole] = useState('');
+    const [height_Feet, setHeight_feet] = useState('');
+    const [height_inch, setHeight_inch] = useState('');
+    const [weight, setWeight] = useState('');
+    const [sex, setSex] = useState('');
+    const [age, setAge] = useState('');
+    const [dob, setDob] = useState('');
+    const [address, setAddress] = useState('');
+    const [city, setCity] = useState('');
+    const [statee, setState] = useState('');
+    const [zip, setZip] = useState('');
+    const [notes, setNotes] = useState('');
+    const [histoty, setHistory] = useState('');
+    const [testResults, setTestResults] = useState('');
 
-    const record = {
-        RECORD_ID: state.ID,
+    let patient = {
+        FIRST_NAME: first_name,
+        LAST_NAME: last_name,
+        EMAIL: email,
+        ID: id,
+        ROLE: role,
+    };
+
+    let record = {
+        RECORD_ID: id,
         HEIGHT_FEET: height_Feet,
         HEIGHT_INCH: height_inch,
         WEIGHT: weight,
@@ -47,6 +62,47 @@ const EditRecords = () => {
         TEST_RESULTS: testResults,
     }
 
+    const handlePatientLookup = async () => {
+        
+        res = await dataSource.get('/login/email/' + patient.EMAIL );
+        response = res.data[0];
+        if(response === undefined) {
+            alert("Account with email: " + patient.EMAIL +  " not found");
+        } else {
+
+            setFirst_name(response.FIRST_NAME);
+            setLast_name(response.LAST_NAME);
+            setEmail(response.EMAIL)
+            setRole(response.ROLE);
+            setId(response.ID);
+
+            switch (response.ROLE){
+                case "P":
+                case "p":
+                    let lookup = await dataSource.get('/record/record_id/' + response.ID );
+                    let data = lookup.data[0];
+        
+                    setHeight_feet(data.HEIGHT_FEET);
+                    setHeight_inch(data.HEIGHT_INCH);
+                    setWeight(data.WEIGHT);
+                    setSex(data.SEX);
+                    setAge(data.AGE);
+                    setDob(data.DOB);
+                    setAddress(data.ADDRESS);
+                    setCity(data.CITY);
+                    setState(data.STATE);
+                    setZip(data.ZIP);
+                    setNotes(data.NOTES);
+                    setHistory(data.HISTORY);
+                    setTestResults(data.TEST_RESULTS);
+                    break;
+                default:
+                    alert("Not a patient account!")
+                    break;
+            }
+        }
+    }
+
     const handleEdit = async (e) => {
         e.preventDefault();
         let res;
@@ -58,22 +114,33 @@ const EditRecords = () => {
 
     const handleCancel = (e) => {
         e.preventDefault();
-        navigate("/patientRecord", { state : user });
+        navigate("/staffHome", { state : user });
     }
 
     return (
         <div className="d-flex justify-content-center align-items-center bg-primary">
             <form>
                 <div className="bg-white p-3 rounded">
-                <h1>Edit Record</h1> <br/>
+                <h1>Patient Lookup</h1> <br/>
+                <div>
+                    <h5>Search for by Patient's Email</h5>
+                    <Row>
+                        <Col>
+                            <label htmlFor='email'>Email:</label><br/>
+                            <input type="text" className='from-control' name='email' onChange={(e) => patient = {...patient, EMAIL: e.target.value}} required></input>
+                        </Col>
+                    </Row><br/>
+                        <button type='button' className='btn btn-success w-25 rounded-0' onClick={handlePatientLookup}>Search</button>
+                </div>
+                <h5>Patient's Record:</h5>
                     <Row>
                         <Col>
                             <label htmlFor="first_name">First Name</label>
-                            <p>{state.FIRST_NAME}</p>
+                            <p>{patient.FIRST_NAME}</p>
                         </Col>
                         <Col>
                             <label htmlFor="last_name">Last Name</label>
-                            <p>{state.LAST_NAME}</p>
+                            <p>{patient.LAST_NAME}</p>
                         </Col>
                         <Col>
                             <label htmlFor="recordId">Record ID</label>
@@ -143,9 +210,10 @@ const EditRecords = () => {
     )
 }
 
-export default EditRecords
+export default PatientLookup;
 
 
 /*
 
+              
 */

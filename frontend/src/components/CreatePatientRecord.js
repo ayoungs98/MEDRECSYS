@@ -7,6 +7,14 @@ function CreatePatientRecord() {
 
     const { state } = useLocation();
     const navigate = useNavigate();
+
+    let user = {
+        FIRST_NAME: state.FIRST_NAME,
+        LAST_NAME: state.LAST_NAME,
+        EMAIL: state.EMAIL,
+        ID: state.ID,
+        ROLE: state.ROLE,
+    }
     
     const [height_Feet, setHeight_feet] = useState('');
     const [height_inch, setHeight_inch] = useState('');
@@ -22,7 +30,7 @@ function CreatePatientRecord() {
     const [histoty, setHistory] = useState('');
     const [testResults, setTestResults] = useState('');
 
-    let user = {
+    let patient = {
         RECORD_ID: state.ID,
         HEIGHT_FEET: height_Feet,
         HEIGHT_INCH: height_inch,
@@ -42,8 +50,9 @@ function CreatePatientRecord() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         let res;
-        res = await dataSource.post('/record/create', user);
-        navigate("/patientHome", { state : state });
+        res = await dataSource.post('/record/create', patient);
+        console.log(res.status);
+        navigate("/patientHome", { state : user });
       }
 
     const handleCancel = () => {
@@ -51,7 +60,7 @@ function CreatePatientRecord() {
             case "P":
             case 'p':
                 console.log("Patient")
-                navigate("/patientHome", { state : state });
+                navigate("/patientHome", { state : user });
                 break;
             case "A":
             case "a":
