@@ -63,6 +63,7 @@ function Login() {
     return (
         <div className="d-flex justify-content-center align-items-center bg-primary vh-100">
             <div className="bg-white p-3 rounded w-25">
+                <h5>Medical Record System v1.0</h5>
                 <h2>Login</h2>
                 <form action="" onSubmit={handleSubmit}>
                     <div className="mb-3">
