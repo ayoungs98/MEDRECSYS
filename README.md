@@ -39,6 +39,7 @@ With this application I used a SQL database. (I used MAMP to create and manage m
           
          To Edit Record infomation:
          1. Click the "Edit" Button.
+     #### Edit Patient:
 
     ### To Creating a Record:
 
