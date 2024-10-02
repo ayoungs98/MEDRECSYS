@@ -34,10 +34,10 @@ With this application I used a SQL database. (I used MAMP to create and manage m
      1. Click on the "View Record" button.
   
        On the View Record page you can go home or edit.
-       > To go back to the Patient home page
+         To go back to the Patient home page
          1. click the "Home" button.
           
-        > To Edit Record infomation:
+         To Edit Record infomation:
          1. Click the "Edit" Button.
 
     ### To Creating a Record:
