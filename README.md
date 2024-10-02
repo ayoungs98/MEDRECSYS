@@ -24,7 +24,7 @@ With this application I used a SQL database. (I used MAMP to create and manage m
   1. At home page input Email address and Password. * (If you don't have an account please create one)
   2. Click the "Login" button.
 
-## As a Patient you have access to the following options.
+## As a Patient you have access to the following actions.
 1. View Record. (If you have a record created already)
 2. Create a Record. (Only if you don't have a record already)
 3. Change Password.
@@ -47,9 +47,15 @@ With this application I used a SQL database. (I used MAMP to create and manage m
     ### Loging out:
 
 
-# Creating a Reocrd as a Staff Memeber:
+## As a Staff Memeber you have acces to the following actions:
+1. View patient reocrd.
+2. Change Password.
+3. Logout.
 
 
-
-# Creating a Login Account as a Admin:
+# As a Admin you have access t othe following actions:
+1. Create Account.
+2. Update Account.
+3. Change Password.
+4. Logout.
 
