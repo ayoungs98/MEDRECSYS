@@ -51,11 +51,25 @@ With this application I used a SQL database. (I used MAMP to create and manage m
 1. View patient reocrd.
 2. Change Password.
 3. Logout.
+   
+   ### View Patient Record:
+
+   ### Change Password:
+
+   ### Logout:
 
 
-# As a Admin you have access t othe following actions:
+## As a Admin you have access t othe following actions:
 1. Create Account.
 2. Update Account.
 3. Change Password.
 4. Logout.
+
+   ### Create Account:
+
+   ### Update Account:
+
+   ### Change Password:
+
+   ### Logout:
 
