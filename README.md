@@ -40,11 +40,11 @@ With this application I used a SQL database. (I used MAMP to create and manage m
        To Edit Record infomation:
          1. Click the "Edit" Button.
 
-  ### To Creating a Record:
+    ### To Creating a Record:
 
-  ### To Change Password:
+    ### To Change Password:
 
-  ### Loging out:
+    ### Loging out:
 
 
 # Creating a Reocrd as a Staff Memeber:
