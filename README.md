@@ -30,7 +30,7 @@ With this application I used a SQL database. (I used MAMP to create and manage m
 3. Change Password.
 4. Logout.
 
-   ## To View a Reocrd:
+   ### To View a Reocrd:
     1. Click on the "View Record" button.
   
        On the View Record page you can go home or edit.
@@ -40,7 +40,11 @@ With this application I used a SQL database. (I used MAMP to create and manage m
        To Edit Record infomation:
          1. Click the "Edit" Button.
 
-  ## To Creating a Record:
+  ### To Creating a Record:
+
+  ### To Change Password:
+
+  ### Loging out:
 
 
 # Creating a Reocrd as a Staff Memeber:
