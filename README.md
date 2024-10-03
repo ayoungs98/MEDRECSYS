@@ -42,8 +42,8 @@ With this application I used a SQL database. (I used MAMP to create and manage m
   ![patientview](screenshots/viewrecord.png)
   
   On the View Record page you have two options.
-      1. Home
-      2. Edit
+  - Home.
+  - Edit.
 
   ### Edit Patient.
   
