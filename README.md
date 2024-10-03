@@ -43,13 +43,15 @@ With this application I used a SQL database. (I used MAMP to create and manage m
   
   On the View Record page you have two options.
   - Home (Takes you back to the patient home page).
-  - Edit.
+  - Edit (Lets you edit your record).
 
   ### Edit Patient.
+  ![editrecord](screenshots/editrecord.png).
   
   ### Creating a Record.
   
   ### Change Password.
+  ![changepassword](screenshots/changepw.png).
   
   ### Loging out.
 
