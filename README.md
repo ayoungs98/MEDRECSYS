@@ -53,7 +53,8 @@ With this application I used a SQL database. (I used MAMP to create and manage m
   ### Change Password.
   ![changepassword](screenshots/changepw.png).
   
-  ### Loging out.
+  ### Logging out.
+  - Clicking the logout button will just take you back to the home page. 
 
 
 ## As a Staff Memeber you have acces to the following actions:
@@ -66,6 +67,7 @@ With this application I used a SQL database. (I used MAMP to create and manage m
    ### Change Password:
 
    ### Logout:
+     - Clicking the logout button will just take you back to the home page.
 
 
 ## As a Admin you have access t othe following actions:
@@ -75,10 +77,13 @@ With this application I used a SQL database. (I used MAMP to create and manage m
 4. Logout.
 
    ### Create Account:
+   ![CreateAccount](screenshots/create_account.png)
 
    ### Update Account:
 
    ### Change Password:
+     ![changepassword](screenshots/changepw.png).
 
    ### Logout:
+     - Clicking the logout button will just take you back to the home page.
 
