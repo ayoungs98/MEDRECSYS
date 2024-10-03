@@ -45,13 +45,13 @@ With this application I used a SQL database. (I used MAMP to create and manage m
       1. Home
       2. Edit
 
-   ### Edit Patient:
-
-    ### To Creating a Record:
-
-    ### To Change Password:
-
-    ### Loging out:
+  ### Edit Patient.
+  
+  ### Creating a Record.
+  
+  ### Change Password.
+  
+  ### Loging out.
 
 
 ## As a Staff Memeber you have acces to the following actions:
