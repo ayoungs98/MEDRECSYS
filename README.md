@@ -42,7 +42,7 @@ With this application I used a SQL database. (I used MAMP to create and manage m
   ![patientview](screenshots/viewrecord.png)
   
   On the View Record page you have two options.
-  - Home.
+  - Home (Takes you back to the patient home page).
   - Edit.
 
   ### Edit Patient.
