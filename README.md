@@ -39,7 +39,8 @@ With this application I used a SQL database. (I used MAMP to create and manage m
    ### To View a Reocrd:
    Click on the "View Record" button.
    
-  ![patientview](screenshots/viewrecord.png).
+  ![patientview](screenshots/viewrecord.png)
+  
   On the View Record page you have two options.
     1. Home
     2. Edit
