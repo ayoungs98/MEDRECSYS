@@ -40,13 +40,9 @@ With this application I used a SQL database. (I used MAMP to create and manage m
    Click on the "View Record" button.
    
   ![patientview](screenshots/viewrecord.png)
-  
-    On the View Record page you can go home or edit.
-     To go back to the Patient home page:
-     1. Click the "Home" button.
-      
-      To Edit Record infomation:
-     1. Click the "Edit" Button.
+  On the View Record page you have two options.
+    1. Home
+    2. Edit
 
    #### Edit Patient:
 
