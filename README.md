@@ -30,15 +30,15 @@ With this application I used a SQL database. (I used MAMP to create and manage m
 
 
 ## As a Patient you have access to the following actions.
- ![patient_view](screenshots/patienthome.png)
+ ![patienthome](screenshots/patienthome.png)
 1. View Record. (If you have a record created already)
 2. Create a Record. (Only if you don't have a record already)
 3. Change Password.
 4. Logout.
 
    ### To View a Reocrd:
-  
      1. Click on the "View Record" button.
+  ![patientview](screenshots/viewrecord.png)
   
     On the View Record page you can go home or edit.
      To go back to the Patient home page:
