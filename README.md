@@ -16,9 +16,11 @@ With this application I used a SQL database. (I used MAMP to create and manage m
 
 
 ## Creating a Login Account:
+![Login](screenshots/login.png).
  1. At home page click on the the "Create Account" button.
  2. Fill out all required fields.
- 3. Click the "Create Account" button
+![Create Account](screenshots/create account.png).
+ 4. Click the "Create Account" button
 
 ## Logging into Website:
 ![Login](screenshots/login.png).
