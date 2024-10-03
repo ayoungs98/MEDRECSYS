@@ -36,6 +36,7 @@ With this application I used a SQL database. (I used MAMP to create and manage m
 4. Logout.
 
    ### To View a Reocrd:
+   ![patient_view](screenshots/patienthome.png)
      1. Click on the "View Record" button.
   
     On the View Record page you can go home or edit.
