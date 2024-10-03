@@ -21,9 +21,10 @@ With this application I used a SQL database. (I used MAMP to create and manage m
  3. Click the "Create Account" button
 
 ## Logging into Website:
+![Login](screenshots/login.png).
   1. At home page input Email address and Password. * (If you don't have an account please create one)
   2. Click the "Login" button.
-![Login](screenshots/login.png)
+
 
 ## As a Patient you have access to the following actions.
 1. View Record. (If you have a record created already)
