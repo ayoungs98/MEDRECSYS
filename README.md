@@ -42,16 +42,16 @@ With this application I used a SQL database. (I used MAMP to create and manage m
   ![patientview](screenshots/viewrecord.png)
   
   On the View Record page you have two options.
-    1. Home
-    2. Edit
+      1. Home
+      2. Edit
 
    ### Edit Patient:
 
-    #### To Creating a Record:
+    ### To Creating a Record:
 
-    #### To Change Password:
+    ### To Change Password:
 
-    #### Loging out:
+    ### Loging out:
 
 
 ## As a Staff Memeber you have acces to the following actions:
