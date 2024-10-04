@@ -46,11 +46,14 @@ Fill out the all the fields and then click "Create Account" button to create you
   - Home (Takes you back to the patient home page).
   - Edit (Lets you edit your record).
 
-  ### Edit Patient.
+  ### Edit Record.
   ![editrecord](screenshots/editrecord.png).
+  You make update any field that allowes you to update. (can not update First name, last name, Record Id.)
+  Once fields has been updated click on the "Update" button.
   
   ### Creating a Record.
   ![createpatientrecord](screenshots/createpatientrecord.png)
+  Fill out all fields and then click "Create" button to create your record.
   
   ### Change Password.
   ![changepassword](screenshots/changepw.png).
