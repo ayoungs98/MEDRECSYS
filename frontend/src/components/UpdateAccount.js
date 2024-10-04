@@ -63,6 +63,10 @@ function UpdateAccount() {
         if(pw === "") {
             res = await dataSource.put('/login/update/', patient );
             console.log(res.status);
+            if(res.status === 200){
+                alert("Account updated.")
+            }
+            navigate("/systemAdmin", { state : user });
         } else {
             if (pw !== pw2) {
                 alert("Passwords do not match");
@@ -71,6 +75,10 @@ function UpdateAccount() {
                 patient = {...patient, PASSWORD:hashedPW}
                 res = await dataSource.put('/login/update/', patient );
                 console.log(res.status);
+                if(res.status === 200){
+                    alert("Account updated.")
+                }
+                navigate("/systemAdmin", { state : user });
             }
         }        
     }

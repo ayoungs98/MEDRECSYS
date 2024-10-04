@@ -108,6 +108,8 @@ function PatientLookup () {
         let res;
         res = await dataSource.put('/record/update/', record );
         console.log(res.status)
+        if (res.status === 200)
+        {alert("Patient's record updated.")}
        navigate("/staffHome", { state : user });
         
     }

@@ -35,7 +35,7 @@ function CreateAccount() {
             res = await dataSource.get('/login/email/' + user.EMAIL );
             response = res.data[0];
 
-            if(response.length === 0) {
+            if(response === undefined) {
                 response = await dataSource.post('/login/create', user );
                 console.log(response.status);
                 navigate("/login");

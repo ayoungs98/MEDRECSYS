@@ -91,7 +91,7 @@ function CreatePatientRecord() {
                     </Col>
                     <Col>
                         <label htmlFor="recordId">Record ID</label>
-                        <p>{user.RECORDID}</p>
+                        <p>{user.ID}</p>
                     </Col>
                 </Row>
                 <Row>
