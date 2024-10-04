@@ -101,12 +101,17 @@ Fill out the all the fields and then click "Create Account" button to create you
    ### Create Account:
    ![CreateAccount](screenshots/create_account.png)
 
-    - At home page click on the the "Create Account" button.
+    - Click on the "Create Account" button.
     - Fill out all required fields.
     - Click the "Create Account" button.
 
    ### Update Account:
    ![adminaccountupdate](screenshots/adminupdateaccount.png)
+
+   - Click on "Update Account" Button.
+   - Enter the login account email in the seach field you wanted to update and click "Search" button.
+   - You can update any field inculding setting a new password.
+   - Once field(s) have been updated click the "Update" button.
 
    ### Change Password:
      ![changepassword](screenshots/changepw.png).
