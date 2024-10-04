@@ -76,6 +76,11 @@ Fill out the all the fields and then click "Create Account" button to create you
    ### Patient Lookup:
    ![staffpatientlookup](screenshots/staffpatientlookup.png).
 
+   - Click on "Patient Lookup"
+   - In the search field type in the patient's email address then click "Search"
+   - Patient's information should auto fill in the fields and then you will be able to update any field.
+   - If any field needed to be updated click "Update" once field(s) have been updated.
+
    ### Change Password:
    ![changepassword](screenshots/changepw.png).
 
@@ -96,9 +101,9 @@ Fill out the all the fields and then click "Create Account" button to create you
    ### Create Account:
    ![CreateAccount](screenshots/create_account.png)
 
-    1. At home page click on the the "Create Account" button.
-    2. Fill out all required fields.
-    3. Click the "Create Account" button.
+    - At home page click on the the "Create Account" button.
+    - Fill out all required fields.
+    - Click the "Create Account" button.
 
    ### Update Account:
    ![adminaccountupdate](screenshots/adminupdateaccount.png)
