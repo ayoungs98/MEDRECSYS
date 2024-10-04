@@ -13,7 +13,7 @@ With this application I used a SQL database. (I used MAMP to create and manage m
   4. Need to log into database and change the ROLE of the first account to A for admin. * (can skip if you used the SQL script)
   5. Login as Admin and created employees accounts.
 
-
+# Using the Medical Record System:
 
 ## Creating a Login Account:
 ![Login](screenshots/login.png).
