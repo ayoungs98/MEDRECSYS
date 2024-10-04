@@ -36,7 +36,7 @@ With this application I used a SQL database. (I used MAMP to create and manage t
 2. Create a Record. (Only if you don't have a record already)
 3. Change Password.
 4. Logout.
-
+- Loom Video: https://www.loom.com/share/ede6eb4fc2194f74b7de89fb3402ba41
    ### To View a Reocrd:
    - Click on the "View Record" button.
    
