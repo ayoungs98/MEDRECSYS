@@ -49,6 +49,7 @@ With this application I used a SQL database. (I used MAMP to create and manage m
   ![editrecord](screenshots/editrecord.png).
   
   ### Creating a Record.
+  ![createpatientrecord](screenshots/createpatientrecord.png)
   
   ### Change Password.
   ![changepassword](screenshots/changepw.png).
@@ -58,19 +59,23 @@ With this application I used a SQL database. (I used MAMP to create and manage m
 
 
 ## As a Staff Memeber you have acces to the following actions:
-1. View patient reocrd.
+![staffhome](screenshots/staffhome.png).
+1. Patient Lookup.
 2. Change Password.
 3. Logout.
    
-   ### View Patient Record:
+   ### Patient Lookup:
+   ![staffpatientlookup](screenshots/staffpatientlookup.png).
 
    ### Change Password:
+   ![changepassword](screenshots/changepw.png).
 
    ### Logout:
      - Clicking the logout button will just take you back to the home page.
 
 
 ## As a Admin you have access t othe following actions:
+![admoinhome](screenshots/adminhome.png)
 1. Create Account.
 2. Update Account.
 3. Change Password.
@@ -80,6 +85,7 @@ With this application I used a SQL database. (I used MAMP to create and manage m
    ![CreateAccount](screenshots/create_account.png)
 
    ### Update Account:
+   ![adminaccountupdate](screenshots/adminupdateaccount.png)
 
    ### Change Password:
      ![changepassword](screenshots/changepw.png).
