@@ -59,6 +59,9 @@ Fill out the all the fields and then click "Create Account" button to create you
   
   ### Change Password.
   ![changepassword](screenshots/changepw.png).
+
+  - Enter new password 2 times and then click "Change Password". (You will get a pop up message saying password was changed)
+  - To Cancel click the "Cancel" button.
   
   ### Logging out.
   - Clicking the logout button will just take you back to the home page. 
@@ -76,6 +79,9 @@ Fill out the all the fields and then click "Create Account" button to create you
    ### Change Password:
    ![changepassword](screenshots/changepw.png).
 
+   - Enter new password 2 times and then click "Change Password". (You will get a pop up message saying password was changed)
+   - To Cancel click the "Cancel" button.
+
    ### Logout:
      - Clicking the logout button will just take you back to the home page.
 
@@ -90,11 +96,18 @@ Fill out the all the fields and then click "Create Account" button to create you
    ### Create Account:
    ![CreateAccount](screenshots/create_account.png)
 
+    1. At home page click on the the "Create Account" button.
+    2. Fill out all required fields.
+    3. Click the "Create Account" button.
+
    ### Update Account:
    ![adminaccountupdate](screenshots/adminupdateaccount.png)
 
    ### Change Password:
      ![changepassword](screenshots/changepw.png).
+
+   - Enter new password 2 times and then click "Change Password". (You will get a pop up message saying password was changed)
+   - To Cancel click the "Cancel" button.
 
    ### Logout:
      - Clicking the logout button will just take you back to the home page.
