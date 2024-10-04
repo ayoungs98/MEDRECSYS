@@ -23,7 +23,7 @@ With this application I used a SQL database. (I used MAMP to create and manage m
     
 ![CreateAccount](screenshots/create_account.png)
 
-Fill out the all the fields and then click "Create Account" button to create your login account.
+- Fill out the all the fields and then click "Create Account" button to create your login account.
 ## Logging into Website:
 ![Login](screenshots/login.png).
   1. At home page input Email address and Password. * (If you don't have an account please create one)
@@ -38,7 +38,7 @@ Fill out the all the fields and then click "Create Account" button to create you
 4. Logout.
 
    ### To View a Reocrd:
-   Click on the "View Record" button.
+   - Click on the "View Record" button.
    
   ![patientview](screenshots/viewrecord.png)
   
