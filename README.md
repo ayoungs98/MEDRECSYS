@@ -2,7 +2,7 @@
 
 This is a medical record system using a React frontend for the UI that a patient, employee, or admin can log into and save a medical record to a database.
 The backend uses javascript and AXIOS to connect to the database.
-With this application I used a SQL database. (I used MAMP to create and manage my database)
+With this application I used a SQL database. (I used MAMP to create and manage the database)
   - The database had 2 tables, a login table that keeps track of all the login information and passwords (which is saved as a hash).
   - and a reocrds table that keeps track of the patients information and medical information.
 
@@ -18,8 +18,8 @@ With this application I used a SQL database. (I used MAMP to create and manage m
 ## Creating a Login Account:
 ![Login](screenshots/login.png).
  - At home page click on the the "Create Account" button.
- -  Fill out all required fields.
- -   Click the "Create Account" button.
+ - Fill out all required fields.
+ - Click the "Create Account" button.
     
 ![CreateAccount](screenshots/create_account.png)
 
