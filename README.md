@@ -36,7 +36,7 @@ With this application I used a SQL database. (I used MAMP to create and manage t
 2. Create a Record. (Only if you don't have a record already)
 3. Change Password.
 4. Logout.
-- Loom Video: https://www.loom.com/share/ede6eb4fc2194f74b7de89fb3402ba41
+- Loom Video on "How to use Medical Record System as a Patient:" https://www.loom.com/share/ede6eb4fc2194f74b7de89fb3402ba41
    ### To View a Reocrd:
    - Click on the "View Record" button.
    
@@ -72,6 +72,7 @@ With this application I used a SQL database. (I used MAMP to create and manage t
 1. Patient Lookup.
 2. Change Password.
 3. Logout.
+- Loom Video on "How to use Medical Record as a Employee:" https://www.loom.com/share/19dc55bbeecb44a2b6ed19931ba248af
    
    ### Patient Lookup:
    ![staffpatientlookup](screenshots/staffpatientlookup.png).
@@ -97,6 +98,7 @@ With this application I used a SQL database. (I used MAMP to create and manage t
 2. Update Account.
 3. Change Password.
 4. Logout.
+- Loom Video "How do use Medical Record System as a Admin": https://www.loom.com/share/6acac9ee19c34b28b77db24345fd1dbb
 
    ### Create Account:
    ![CreateAccount](screenshots/create_account.png)
